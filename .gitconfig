@@ -1,0 +1,12 @@
+[user]
+	name  = flxw
+	email = felix.wolff@flxw.de
+
+[core]
+	editor = vim
+
+[push]
+	default = simple
+
+[color "ui"]
+	auto = true

@@ -1,0 +1,6 @@
+antialias yes
+antialiasPrinting yes
+
+urlCommand "firefox %s"
+bind f11 window toggleFullScreenMode
+bind f11 fullScreen toggleFullScreenMode

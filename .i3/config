@@ -1,0 +1,231 @@
+##################################################
+#### BASIC SETTINGS ##############################
+font xft:Inconsolata 10
+ipc-socket ~/.i3/ipc.sock
+focus_follows_mouse	no
+
+##################################################
+#### LAYOUT MODES ################################
+# Fullscreen (Mod1+f)
+bindcode Mod1+41 fullscreen
+# Stacking (Mod1+g)
+bindcode Mod1+24 layout stacking
+# Tabbed (Mod1+w)
+bindcode Mod1+25 layout tabbed
+# Default (Mod1+e)
+bindcode Mod1+26 layout default
+# Toggle tiling/floating of the current window (Mod1+Shift+Space)
+bindcode Mod1+Shift+65 floating toggle
+# Go into the tiling layer / floating layer, depending on whether
+# the current window is tiling / floating (Mod1+t)
+bindcode Mod1+28 focus mode_toggle
+
+##################################################
+#### MOVE CONFIGURATION ##########################
+# Focus (Mod1+j/k/l/;)
+bindcode Mod1+43 focus left
+bindcode Mod1+44 focus down
+bindcode Mod1+45 focus up
+bindcode Mod1+46 focus right
+# (alternatively, you can use the cursor keys:)
+bindsym Mod1+Left focus left
+bindsym Mod1+Down focus down
+bindsym Mod1+Up focus up
+bindsym Mod1+Right focus right
+
+# Focus Container (Mod3+j/k/l/;)
+bindcode Mod3+43 focus parent; focus left
+bindcode Mod3+44 focus parent; focus down
+bindcode Mod3+45 focus parent; focus up
+bindcode Mod3+46 focus parent; focus right
+# (alternatively, you can use the cursor keys:)
+bindsym Mod3+Left focus parent; focus left
+bindsym Mod3+Down focus parent; focus down
+bindsym Mod3+Up focus parent; focus up
+bindsym Mod3+Right focus parent; focus right
+
+# Snap (Mod1+Control+j/k/l/;)
+bindcode Mod1+Control+43 layout stacking
+bindcode Mod1+Control+44 layout stacking
+bindcode Mod1+Control+45 layout stacking
+bindcode Mod1+Control+46 layout stacking
+# (alternatively, you can use the cursor keys:)
+bindsym Mod1+Control+Left layout stacking
+bindsym Mod1+Control+Down layout stacking
+bindsym Mod1+Control+Up layout stacking
+bindsym Mod1+Control+Right layout stacking
+
+# Move (Mod1+Shift+j/k/l/;)
+bindcode Mod1+Shift+43 move left
+bindcode Mod1+Shift+44 move down
+bindcode Mod1+Shift+45 move up
+bindcode Mod1+Shift+46 move right
+# (alternatively, you can use the cursor keys:)
+bindsym Mod1+Shift+Left move left
+bindsym Mod1+Shift+Down move down
+bindsym Mod1+Shift+Up move up
+bindsym Mod1+Shift+Right move right
+
+# Move Container (Mod3+Shift+j/k/l/;)
+bindcode Mod3+Shift+43 focus parent; move left
+bindcode Mod3+Shift+44 focus parent; move down
+bindcode Mod3+Shift+45 focus parent; move up
+bindcode Mod3+Shift+46 focus parent; move right
+
+mode "resize" {
+# These bindings trigger as soon as you enter the resize mode
+
+# They resize the border in the direction you pressed, e.g.
+# when pressing left, the window is resized so that it has
+# more space on its left
+    bindsym h resize grow left
+    bindsym Shift+h resize shrink left
+    
+    bindsym l resize grow right
+    bindsym Shift+l resize shrink right
+
+    bindsym k resize grow up
+    bindsym Shift+k resize shrink up
+
+    bindsym j resize grow down
+    bindsym Shift+j resize shrink down
+
+# back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Enter resize mode
+bindsym Mod1+r mode "resize"
+
+# Mod1+Shift+q kills the current client
+bindcode Mod1+Shift+24 kill
+
+# Mod1+Shift+e exits i3
+bindcode Mod1+Shift+26 exit
+
+# Mod1+Shift+r restarts i3 inplace
+bindcode Mod1+Shift+27 restart
+
+#################################################
+#### WINDOW SETTINGS ############################
+new_window 1pixel
+default_orientation vertical
+
+#################################################
+#### WORKSPACE NAMES AND PLACEMENT ##############
+# Workspaces (Mod1+1/2/…)
+bindcode Mod1+10 workspace 1:term
+bindcode Mod1+11 workspace 2:www
+bindcode Mod1+12 workspace 3:lect
+bindcode Mod1+13 workspace 4:code
+bindcode Mod1+14 workspace 5:stuff
+bindcode Mod1+15 workspace 6:eclps
+bindcode Mod1+16 workspace 7
+bindcode Mod1+17 workspace 8
+bindcode Mod1+18 workspace 9:mail
+bindcode Mod1+19 workspace 10:vid
+
+# Move to Workspaces
+bindcode Mod1+Shift+10 move workspace 1:term
+bindcode Mod1+Shift+11 move workspace 2:www
+bindcode Mod1+Shift+12 move workspace 3:lect
+bindcode Mod1+Shift+13 move workspace 4:code
+bindcode Mod1+Shift+14 move workspace 5:stuff
+bindcode Mod1+Shift+15 move workspace 6:eclps
+bindcode Mod1+Shift+16 move workspace 7
+bindcode Mod1+Shift+17 move workspace 8
+bindcode Mod1+Shift+18 move workspace 9:mail
+bindcode Mod1+Shift+19 move workspace 10:vid
+
+#################################################
+#### MONITOR SETTINGS ##########################
+workspace "1:term" output LVDS1
+workspace "1:term" output VGA1
+workspace "2:www"  output HDMI3
+#workspace "2: www"  output VGA1
+workspace "3:lect" output VGA1
+workspace "4:code" output LVDS1
+workspace "5:stuff" output HDMI3
+workspace "9:mail" output  VGA1
+workspace "10:vid" output LVDS1
+
+#################################################
+#### WORKSPACE ASSIGNMENTS ######################
+#### get class with 'xprop' command #############
+assign [class="Chromium"]  	   2:www
+assign [class="Folienizer"]    3:lect
+assign [class="Qt Creator"]	   4:code
+assign [class="XTerm"]   	   5:stuff
+assign [class="Xpdf"]      	   5:stuff
+assign [class="Claws-mail"]    9:mail
+assign [class="Vlc"]      	   10:vid
+
+#################################################
+#### PROGRAM SHORTCUTS ###########################
+# change loudness using laptop keys
+bindcode 123 exec amixer -c 0 set Master 2dB+
+bindcode 122 exec amixer -c 0 set Master 2dB-
+bindcode 121 exec amixer set Master toggle
+bindcode 199 exec synclient TouchpadOff=`synclient -l | grep -ce TouchpadOff.\*0`
+
+# Mod1+Enter starts a new terminal
+bindcode Mod1+36 exec /usr/bin/termite
+
+# Various shortcuts
+bindsym Mod4+1      exec  /usr/bin/subl3
+bindsym Mod4+F1     exec  /usr/bin/chromium
+bindsym Mod4+F2     exec  /home/felix/code/folienizer/cppimpl/build-folienizer-Desktop-Release/folienizer
+bindsym Mod4+F3     exec  /usr/bin/claws-mail
+bindsym Mod4+F4     exec  /usr/bin/qtcreator
+bindsym Mod4+F5     exec  /usr/bin/gnumeric
+bindsym Mod4+F6     exec  /usr/bin/vlc
+
+# launch personal hacks
+bindsym  Mod4+F12    exec ~/bin/setrandombg.sh
+bindsym  XF86Launch1 exec ~/bin/connect-vga.sh
+bindcode 107         exec ~/bin/take-screenshot.sh
+
+##################################################
+#### STARTUP CONFIGURATION #######################
+exec /usr/bin/redshift -l 52.4:13.07 -t 5500:4200
+exec /usr/bin/nm-applet --sm-disable
+exec /usr/bin/dropboxd
+exec /usr/bin/dunst -config ~/.i3/dunstrc
+exec i3-msg 'workspace 1:term'
+
+##################################################
+#### LOOKS CONFIGURATION #########################
+# color defines for zenburn styled i3
+set $bg     #2c2c2e
+set $fg     #9f9f9f
+set $hi     #efef8f
+set $ac     #a0afa0
+set $tx     #040404
+set $ia     #8f8f8f
+set $be     #8faf9f
+set $yw     #ccdc90
+set $gn     #88b090
+set $rd     #e89393
+
+# set some nice colors      border     background  text
+client.focused              $ac        $ac         $tx
+client.unfocused            $bg        $bg         $ia
+client.focused_inactive     $bg        $bg         $ac
+client.urgent               $rd        $rd         $tx
+
+bar {
+    position top
+
+    status_command i3status --config ~/.i3/i3status.conf
+
+    colors {
+        background          $bg
+        statusline          $fg
+        separator           $hi
+        active_workspace    $gn        $bg        $ac
+        focused_workspace   $gn        $ac        $tx
+        inactive_workspace  $bg        $bg        $ia
+        urgent_workspace    $rd        $bg        $ac
+    }
+}
