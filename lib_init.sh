@@ -22,7 +22,8 @@ for ITEM in $@; do
             mkdir "$HOME/.i3"
             symlink_file "$PWD/.i3/config" "$HOME/.i3"
             symlink_file "$PWD/.i3/conki3" "$HOME/.i3"
-            symlink_file "$PWD/.i3/dmenu.sh" "$HOME/.i3"
+            symlink_file "$PWD/.i3/dunstrc" "$HOME/.i3"
+            symlink_file "$PWD/.i3/i3status.conf" "$HOME/.i3"
             ;;
 
         vim)
@@ -89,6 +90,7 @@ for ITEM in $@; do
 			mkdir -p "$HOME/.config"
 			symlink_file "$PWD/termite" "$HOME/.config"
 			;;
+
 
         # Custom program direcories
 		bin)
