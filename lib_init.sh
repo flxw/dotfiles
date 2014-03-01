@@ -85,6 +85,11 @@ for ITEM in $@; do
             symlink_file "$PWD/.gnuplot" "$HOME"
             ;;
 
+        termite)
+			mkdir -p "$HOME/.config"
+			symlink_file "$PWD/termite" "$HOME/.config"
+			;;
+
         # Custom program direcories
 		bin)
 			symlink_file "$PWD/bin" "$HOME"
@@ -93,7 +98,7 @@ for ITEM in $@; do
         templates)
             symlink_file "$PWD/templates" "/home/$USER/"
             ;;
-            
+
 		*)
 			echo "Sorry! Program '$ITEM' isn't even in the configs!"
 			;;
