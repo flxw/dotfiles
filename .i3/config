@@ -163,14 +163,14 @@ assign [class="Vlc"]      	   10:vid
 
 #################################################
 #### PROGRAM SHORTCUTS ###########################
+bindcode Mod1+36 exec /usr/bin/termite
+bindsym  Mod1+d  exec /usr/bin/j4-dmenu-desktop --term=/usr/bin/termite
+
 # change loudness using laptop keys
 bindcode 123 exec amixer -c 0 set Master 2dB+
 bindcode 122 exec amixer -c 0 set Master 2dB-
 bindcode 121 exec amixer set Master toggle
 bindcode 199 exec synclient TouchpadOff=`synclient -l | grep -ce TouchpadOff.\*0`
-
-# Mod1+Enter starts a new terminal
-bindcode Mod1+36 exec /usr/bin/termite
 
 # Various shortcuts
 bindsym Mod4+1      exec  /usr/bin/subl3
