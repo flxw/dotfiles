@@ -18,7 +18,7 @@ if status --is-login
     setenv GREP_COLORS 'ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
 
     # editor and pager variables
-    setenv EDITOR 'subl3'
+    setenv EDITOR 'vim'
     setenv PAGER 'less'
 
     eval (dircolors -c ~/.dircolors)

@@ -207,16 +207,16 @@ background = #ffffff
 color0 = #444444
 color8 = #999999
 # Red
-color1 = #ff0055
+color1 = #d65e76
 color9 = #ffafaf
 # Green
-color2 = #bbffaa
-color10 = #739200
+color2 = #739200
+color10 = #b1d631
 # Yellow
 color3 = #D0B03C
 color11 = #FFE377
 # Blue
-color4 = #cbe4ee
+color4 =  #cbe4ee
 color12 = #538192
 # Magenta
 color5 = #C8A0D1
@@ -225,7 +225,7 @@ color13 = #FBB1F9
 color6 = #538192
 color14 = #732900
 # White
-color7 = #bbbbbb
-color15 = #eeeeee
+color7 = #eeeeee
+color15 = #bbbbbb
  
 # vim: ft=dosini
