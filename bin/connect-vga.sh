@@ -14,7 +14,7 @@ if [ ! -e $LOCKFILE ]; then
         # now that we are not docked, simply behave as if an external
         # monitor was connected
         xrandr --output LVDS1 --auto
-        xrandr --output VGA1 --left-of LVDS1 --auto
+        xrandr --output VGA1 --right-of LVDS1 --auto
         touch $LOCKFILE
     fi
 else
