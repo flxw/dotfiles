@@ -23,3 +23,5 @@ if status --is-login
 
     eval (dircolors -c ~/.dircolors)
 end
+
+. "$HOME/.config/fish/functions/aliases.fish"
