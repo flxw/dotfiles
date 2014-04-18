@@ -27,6 +27,5 @@ export GREP_COLORS='ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
 export EDITOR='vim'
 export PAGER='less'
 
-# set the LS_COLORS variable for color of the completion: {{{
+# set the LS_COLORS variable for color of the completion:
 eval `dircolors -b ~/.dircolors`
-#}}}
