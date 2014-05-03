@@ -9,7 +9,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Inconsolata for Powerline 12
+font = Meslo LG S DZ for Powerline 10
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
@@ -33,41 +33,41 @@ browser = chromium
 #word_chars = -A-Za-z0-9,./?%&#:_=+@~
 
 [colors]
-#-- color scheme: solarized light
-#background = #fdf6e3
+#-- color scheme: solarized
+background = #fdf6e3
 #background = #002b36
-#foreground = #839496
-#foreground_dim = #999999
-##foreground:			 #657b83
-##fading:                20
-##fadeColor:             #002b36
-#
-## black dark/light
-#color0 = #073642
-#color8 = #002b36
-#
-## red dark/light
-#color1 = #dc322f
-#color9 = #cb4b16
-## green dark/light
-#color2 = #859900
-#color10 = #586e75
-## yellow dark/light
-#color3 = #b58900
-#color11 = #657b83
-## blue dark/light
-#color4 = #268bd2
-#color12 = #839496
-## magenta dark/light
-#color5 = #d33682
-#color13 = #6c71c4
-## cyan dark/light
-#color6 = #2aa198
-#color14 = #93a1a1
-## white dark/light
-#color7 = #eee8d5
-#color15 = #fdf6e3
-#
+foreground = #839496
+foreground_dim = #999999
+#foreground:			 #657b83
+#fading:                20
+#fadeColor:             #002b36
+
+# black dark/light
+color0 = #073642
+color8 = #002b36
+
+# red dark/light
+color1 = #dc322f
+color9 = #cb4b16
+# green dark/light
+color2 = #859900
+color10 = #586e75
+# yellow dark/light
+color3 = #b58900
+color11 = #657b83
+# blue dark/light
+color4 = #268bd2
+color12 = #839496
+# magenta dark/light
+color5 = #d33682
+color13 = #6c71c4
+# cyan dark/light
+color6 = #2aa198
+color14 = #93a1a1
+# white dark/light
+color7 = #eee8d5
+color15 = #fdf6e3
+
 # -- hybrid.vim colorscheme
 #background = #1d1f21
 #foreground = #969896
@@ -199,33 +199,33 @@ browser = chromium
 #color14 = #00f5e9
 #color15 = #eeeeec
 
-# -- hemisu colorscheme
-foreground = #111111
-background = #ffffff
-
-# Black
-color0 = #444444
-color8 = #999999
-# Red
-color1 = #d65e76
-color9 = #ffafaf
-# Green
-color2 = #739200
-color10 = #b1d631
-# Yellow
-color3 = #D0B03C
-color11 = #FFE377
-# Blue
-color4 =  #cbe4ee
-color12 = #538192
-# Magenta
-color5 = #C8A0D1
-color13 = #FBB1F9
-# Cyan
-color6 = #538192
-color14 = #732900
-# White
-color7 = #eeeeee
-color15 = #bbbbbb
+## -- hemisu colorscheme
+#foreground = #111111
+#background = #ffffff
+#
+## Black
+#color0 = #444444
+#color8 = #999999
+## Red
+#color1 = #d65e76
+#color9 = #ffafaf
+## Green
+#color2 = #739200
+#color10 = #b1d631
+## Yellow
+#color3 = #D0B03C
+#color11 = #FFE377
+## Blue
+#color4 =  #cbe4ee
+#color12 = #538192
+## Magenta
+#color5 = #C8A0D1
+#color13 = #FBB1F9
+## Cyan
+#color6 = #538192
+#color14 = #732900
+## White
+#color7 = #eeeeee
+#color15 = #bbbbbb
  
 # vim: ft=dosini
