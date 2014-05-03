@@ -146,7 +146,6 @@ workspace "2:www"  output HDMI3
 #workspace "2: www"  output VGA1
 workspace "3:lect" output VGA1
 workspace "4:code" output LVDS1
-workspace "5:stuff" output HDMI3
 workspace "9:mail" output  VGA1
 workspace "10:vid" output LVDS1
 
