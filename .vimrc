@@ -1,5 +1,5 @@
 ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-"               Last Edit: 22.01.2014
+"               Last Edit: 18.04.2014
 "               ---------------------
 "               vundle configuration
 "               comes first to provide
@@ -41,11 +41,11 @@ filetype plugin indent on     " required!
 if $TERM == "linux"
 	colorscheme desert
 else
-"	set background=light
-"    colorscheme solarized
+	set background=light
+    colorscheme solarized
 "    let g:hybrid_use_Xresources = 1
 "    colorscheme hybrid-light
-    colorscheme smyck
+"    colorscheme smyck
 endif
 
 " always enable syntax highlighting
