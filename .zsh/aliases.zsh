@@ -1,5 +1,5 @@
 # alias file for my zsh configuration
-# Last Edit: 11.12.2013
+# Last Edit: 11.05.2014
 # git aliases
 alias g='git'
 alias gst='git status'
@@ -26,20 +26,17 @@ alias l='ls -lh'
 # make program calls faster and more convenient
 alias vim='~/bin/vim.sh'
 alias du='du -h'
-alias mpc='ncmpcpp'
 alias vless='vim -u ~/.vim/less.vim'
 alias slay='echo "Eat shit and die!"; kill -9'
 alias rm_empties="rm -r **/*(/^F)"
 #! power management
 alias hib='echo "No swap - No hibernate!"'
 alias susp='systemctl suspend'
-alias poweroff='ncmpcpp stop; mpd --kill; systemctl poweroff'
+alias poweroff='systemctl poweroff'
 alias reboot='systemctl reboot'
 alias =clear
 alias skype='xhost +local: && su skype -c skype'
-alias ssqueak='cd ~h/thirsem/swa/squeak; ./squeak.sh; cd -1'
-alias supervise='~/node_modules/supervisor/lib/cli-wrapper.js'
-alias bower='~/node_modules/bower/bin/bower'
+alias ssqueak='cd ~h/cursem/swt/squeak; ./squeak.sh; cd -1'
 
 # cd aliases
 alias cdc='cd ~/../code'
@@ -55,4 +52,4 @@ alias umntusb='umount /media/usb1'
 alias mntusb2='mount /media/usb2'
 alias umntusb2='umount /media/usb2'
 alias mnthp='mnthp.sh'
-alias umnthp='fusermount -u ~h/android'
+alias umnthp='fusermount -u ~/../android'
