@@ -1,0 +1,10 @@
+{
+	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.light.tmTheme",
+	"font_face": "Meslo LG S DZ for Powerline",
+	"font_size": 9,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"translate_tabs_to_spaces": true
+}

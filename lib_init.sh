@@ -1,5 +1,5 @@
 #!/bin/bash
-# Last Edit: 19.11.2013
+# Last Edit: 19.05.2014
 
 ## function definitions
 symlink_file() {
@@ -18,6 +18,10 @@ fi
 for ITEM in $@; do
 
 	case "$ITEM" in
+        sublime)
+            mkdir -p "$HOME/.config/sublime-text-3/Packages/"
+            symlink_file "$PWD/sublime" "$HOME/.config/sublime-text-3/Packages/User"
+            ;;
         i3)
             mkdir "$HOME/.i3"
             symlink_file "$PWD/.i3/config" "$HOME/.i3"

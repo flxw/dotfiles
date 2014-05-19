@@ -1,3 +1,5 @@
+Package Control/
+Package Control.*
 lib.sublime-*
 *.db
 *.sql
