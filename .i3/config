@@ -1,6 +1,5 @@
 ##################################################
 #### BASIC SETTINGS ##############################
-font xft:Inconsolata 10
 ipc-socket ~/.i3/ipc.sock
 focus_follows_mouse	no
 
@@ -197,11 +196,12 @@ exec /usr/bin/nm-applet --sm-disable
 exec /usr/bin/dropboxd
 exec /usr/bin/dunst -config ~/.i3/dunstrc
 exec i3-msg 'workspace 1:term'
-exec /home/felix/code/scplay/build-scplay-Desktop-Release/scplay
+#exec /home/felix/code/scplay/build-scplay-Desktop-Release/scplay
 
 ##################################################
 #### LOOKS CONFIGURATION #########################
-# color defines for zenburn styled i3
+font xft:Inconsolata 11
+
 set $bg     #2c2c2e
 set $fg     #9f9f9f
 set $hi     #efef8f
