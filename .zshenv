@@ -2,10 +2,6 @@ fpath=($fpath $HOME/.zsh/func)
 typeset -U fpath
 
 # set PATH to include my own binaries
-if ! echo "$PATH" | grep -q gem; then
-    export PATH=$PATH:"$HOME"/.gem/ruby/2.0.0/bin
-fi
-
 if ! echo "$PATH" | grep -q "$HOME/bin"; then
     export PATH=$PATH:"$HOME/bin"
 fi

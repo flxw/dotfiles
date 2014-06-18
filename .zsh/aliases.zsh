@@ -1,5 +1,5 @@
 # alias file for my zsh configuration
-# Last Edit: 11.05.2014
+# Last Edit: 12.05.2014
 # git aliases
 alias g='git'
 alias gst='git status'
@@ -36,7 +36,7 @@ alias poweroff='systemctl poweroff'
 alias reboot='systemctl reboot'
 alias =clear
 alias skype='xhost +local: && su skype -c skype'
-alias ssqueak='cd ~h/cursem/swt/squeak; ./squeak.sh; cd -1'
+alias ssqueak='cd ~/../cursem/swt/squeak; ./squeak.sh; cd -1'
 
 # cd aliases
 alias cdc='cd ~/../code'
