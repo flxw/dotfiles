@@ -3,7 +3,7 @@ typeset -U fpath
 
 # set PATH to include my own binaries
 if ! echo "$PATH" | grep -q "$HOME/bin"; then
-    export PATH=$PATH:"$HOME/bin"
+    export PATH=$PATH:~/.gem/ruby/2.1.0/bin:~/node_modules/.bin:~/bin
 fi
 
 # for less
@@ -22,6 +22,7 @@ export GREP_COLORS='ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
 # editor and pager variables
 export EDITOR='vim'
 export PAGER='less'
+export BROWSER=chromium
 
 # set the LS_COLORS variable for color of the completion:
 eval `dircolors -b ~/.dircolors`
