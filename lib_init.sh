@@ -44,11 +44,9 @@ for ITEM in $@; do
             ;;
 
         zsh)
-            symlink_file "$PWD/.zsh"    "$HOME"
             symlink_file "$PWD/.zshrc"  "$HOME"
             symlink_file "$PWD/.zlogin" "$HOME"
             symlink_file "$PWD/.zshenv" "$HOME"
-            symlink_file "$PWD/.dircolors" "$HOME"
             ;;
 
         fish)
