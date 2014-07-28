@@ -47,6 +47,7 @@ for ITEM in $@; do
             symlink_file "$PWD/.zshrc"  "$HOME"
             symlink_file "$PWD/.zlogin" "$HOME"
             symlink_file "$PWD/.zshenv" "$HOME"
+            symlink_file "$PWD/.dircolors" "$HOME"
             ;;
 
         fish)
