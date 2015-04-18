@@ -7,3 +7,4 @@ lib.sublime-*
 mpdstate
 *.pid
 cache
+sublime/Color Highlighter/
