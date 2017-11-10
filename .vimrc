@@ -6,143 +6,134 @@
 "               all packages
 "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 set nocompatible
-filetype off
+filetype on
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" Plugins:
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+let bundlepath='~/.vim/bundle'
+call vundle#begin(bundlepath)
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-"
-"Bundle 'AutomaticLaTexPlugin'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'dag/vim-fish'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
-" ...
-filetype plugin indent on     " required! 
+" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'chriskempson/base16-vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'junegunn/goyo.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'pangloss/vim-javascript'
+Plugin 'groenewege/vim-less'
 
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-" Set the colorscheme and numbers depending on the environment
-" On the login console, use colorscheme desert,
-" and solarized anywhere else
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Plugin: NERDTree
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR> " open NERDTREE with CTRL-N
+let NERDTreeIgnore=['\.pyc$', '__pycache__']
+
+" Plugin: Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_mode_map={ 'mode': 'passive' }
+
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_loc_list_height=3
+let g:syntastic_python_python_exec='/usr/local/bin/pytest3'
+let g:syntastic_javascript_checkers = ['jscs']
+
+" Plugin: YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" Plugin: SimpylFold
+let g:SimpylFold_fold_docstring=0
+let g:SimpylFold_docstring_preview=1
+
+" Plugin: CtrlP
+nnoremap <Leader>m :CtrlPBufTag<CR>
+map <C-t> :CtrlPBufTag<CR>
+let g:ctrlp_extensions = ['buffertag']
+
+" Plugin: Airline
+let g:airline_theme='gruvbox'
+let g:airline_powerline_fonts=1
+"set encoding=utf-8
+
 
 ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 "               General options
 "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-if $TERM == "linux"
-	colorscheme desert
-else
-	set background=light
-    colorscheme solarized
-"    let g:hybrid_use_Xresources = 1
-"    colorscheme hybrid-light
-"    colorscheme smyck
-endif
+set backspace=indent,eol,start  " backspace over everything in insert mode
+set laststatus=2  " The value of this option influences when the last window will have a status line
+set ignorecase
+set smartcase  " will automatically switch to a case-sensitive search if you use capital letters
+au FocusLost * silent! wa  " Autosave on focus lost
 
-" always enable syntax highlighting
-syntax on
 
-" highlight search hits
-set hlsearch
+" Filetypes:
+" Python
+au BufNewFile,BufRead *.py
+                        \ set expandtab |           " enter spaces when tab is pressed
+                        \ set textwidth=79 |        " break lines when line length increases
+                        \ set tabstop=4 |           " use 4 spaces to represent tab
+                        \ set softtabstop=4 |
+                        \ set shiftwidth=4 |        " number of spaces to use for auto indent
+                        \ set autoindent |          " copy indent from current line when starting a new line
+                        \ set fileformat=unix
 
-" always enable linenumbers
-set nu
+" Web (doesn't seem to work)
+au BufNewFile,BufRead *.js,*.html,*.css,*.json
+                        \ set tabstop=2 |
+                        \ set softtabstop=2 |
+                        \ set shiftwidth=2
 
-" folds
-set foldenable
-"set foldcolumn=1
 
-" expand tabs to 4 spaces, also use 4 spaces as intendation level
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
-">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-"             key mappings
-"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 "> open matching header and source files
 nmap <C-V> :AV<CR>
 "> switch between tabs
 nmap <F11> :tabprevious<CR>
 nmap <F12> :tabnext<CR>
+nnoremap <Leader>f :Autoformat<CR>
+nnoremap <Leader>g :GitGutterToggle<CR>
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
 
+" Appearance
+colorscheme gruvbox
+set background=dark
+set nu
+let python_highlight_all=1
+syntax on
+set nohlsearch
+set incsearch
 
-">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-"               plugin configuration
-"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-">>>> powerline
-set laststatus=2
-let g:Powerline_symbols='fancy'
-"let g:Powerline_theme="skwp"
-"let g:Powerline_colorscheme="skwp"
+" Enable folding
+set foldmethod=syntax
+set foldlevel=99
+set wrap linebreak nolist
 
-">>>> ATP
-let b:atp_TexCompiler = "pdflatex"
-let b:atp_BibCompiler = "bibtex"
-let g:atp_Compiler    = "python"
-let g:atp_Python      = "python2"
-
-let b:atp_updatetime_insert   = 0
-let b:atp_updatetime_normal   = 0
-"let b:atp_updatetime_normal   = 5000
-let g:atp_HighlightErrors 	  = 1
-" bibtex
-let g:atp_bibsearch = "python"
-" viewer
-let b:atp_Viewer        = "xpdf"
-let g:atp_ReloadViewers = [ "xpdf" ]
-let b:atp_OpenViewer    = 1
-" completion
-let g:atp_local_completion = 1
-" codefolding
-"let g:atp_folding = 1
-"let g:atp_fold_environments = 1
-
-">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-"         functions making life easier
-"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-function LastMod()
-    if line("$") > 20
-        let lastModifiedLine = 20
-    else
-        let lastModifiedLine = line("$")
-    endif
-
-    execute "1," . lastModifiedLine . "g/Last Edit: /s/Last Edit: .*/Last Edit: " . strftime("%d.%m.%Y")
-endfunction
-
-">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-"            file specific settings
-"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-" Update 'Last Edit' label on write
-autocmd BufWritePre,FileWritePre * mark s|call LastMod()|'s
-
-" For all text files set 'textwidth'
-autocmd FileType text     setlocal textwidth=80
-autocmd FileType plaintex setlocal textwidth=80
-autocmd FileType tex      setlocal textwidth=80
-autocmd FileType python   setlocal textwidth=80
-
-" disable tab expansion for Makefiles
-autocmd FileType make setlocal noexpandtab
-
-" set various options for Python source editing
-autocmd FileType python setlocal softtabstop=4 smarttab
-
-" Enable file type detection.
-" Use the default filetype settings, so that mail gets 'tw' set to 72,
-" 'cindent' is on in C files, etc.
-" Also load indent files, to automatically do language-dependent indenting.
-filetype plugin indent on
+" Indentation behaviour
+set expandtab
+set shiftwidth=2
+set softtabstop=2
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -154,3 +145,13 @@ autocmd BufReadPost *
             \   exe "normal! g`\"" |
             \ endif
 "  augroup END
+
+" Functions
+function! WC()
+  let filename = expand("%")
+  let cmd = "detex " . filename . " | wc -w | tr -d [:space:]"
+  let result = system(cmd)
+  echo result . " words"
+endfunction
+
+command WC call WC()
