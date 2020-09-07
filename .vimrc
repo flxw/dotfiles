@@ -38,3 +38,8 @@ set nu
 syntax on
 set nohlsearch
 set incsearch
+
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
