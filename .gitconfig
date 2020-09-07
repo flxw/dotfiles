@@ -1,12 +1,8 @@
 [user]
-	name  = Felix Wolff
-	email = felix.stefan.wolff@gmail.com
-
-[core]
-	editor = vim
-
-[push]
-	default = simple
-
-[color "ui"]
-	auto = true
+	name = Felix Wolff
+	email = f.wolff@celonis.com
+[oh-my-zsh]
+	hide-status = 1
+	hide-dirty = 1
+[pull]
+	rebase = false
