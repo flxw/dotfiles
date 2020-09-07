@@ -1,6 +1,3 @@
-theme_gruvbox dark soft
-
-
 # environment variables
 export PATH="/opt/local/bin:$PATH"
 export PATH="$HOME/node_modules/.bin:$HOME/Library/Python/3.7/bin:$PATH"
