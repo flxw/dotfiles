@@ -3,3 +3,5 @@
 	email = wolff.felix@protonmail.com
 [pull]
 	rebase = false
+[core]
+	editor = vim
