@@ -7,8 +7,12 @@ export PYSPARK_PYTHON=/usr/bin/python3
 export PYSPARK_DRIVER_PYTHON=/usr/bin/python3
 
 # start X upon login
-if status --is-login
-  if systemctl -q is-active graphical.target && ! test $DISPLAY -a $XDG_VTNR -eq 1
-    exec startx
-  end
+if test (hostname) != "hackintosh"
+  exit
+end
+
+if status --is-login && \
+  systemctl -q is-active graphical.target && \
+  test $DISPLAY -a $XDG_VTNR -ne 1
+  exec startx
 end
