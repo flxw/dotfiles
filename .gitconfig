@@ -1,7 +1,16 @@
 [user]
 	name = Felix Wolff
 	email = wolff.felix@protonmail.com
+	signingkey = 4EB54201252B02E0
 [pull]
 	rebase = false
 [core]
 	editor = vim
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg
+
+# might be useful in the future:
+#[includeIf "gitdir:~/code/"]
+#  path = ~/.work.gitconfig
