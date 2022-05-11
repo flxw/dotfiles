@@ -60,7 +60,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 #===== User configuration
-#export PATH="/opt/local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 #export PATH="$HOME/.jenv/bin:$PATH"
 #export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 #export PATH="$HOME/.krew/bin:$PATH"
