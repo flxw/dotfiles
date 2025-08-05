@@ -1,0 +1,8 @@
+# symlink to .config/ghostty/config
+keybind = super+ctrl+left=goto_split:left
+keybind = super+ctrl+right=goto_split:right
+keybind = super+ctrl+up=goto_split:up
+keybind = super+ctrl+down=goto_split:down
+
+theme = GruvboxDark
+shell-integration = zsh
