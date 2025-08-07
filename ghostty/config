@@ -6,3 +6,5 @@ keybind = super+ctrl+down=goto_split:down
 
 theme = GruvboxDark
 shell-integration = zsh
+shell-integration-features = no-cursor
+cursor-style-blink = false

@@ -6,5 +6,5 @@ then symlink it to the appropriate location, e.g.
 $ ln -s "$PWD/dotfiles/.zshrc" "$HOME/.zshrc"
 ```
 
-# Colors
-* https://github.com/herrbischoff/iterm2-gruvbox
+# Link Recommendations
+https://matthewsanabria.dev/posts/tools-worth-changing-to-in-2025/

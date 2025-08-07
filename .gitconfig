@@ -10,3 +10,5 @@
 
 [includeIf "gitdir:~/celonis/"]
   path = ~/.gitconfig.work
+[init]
+	defaultBranch = master
